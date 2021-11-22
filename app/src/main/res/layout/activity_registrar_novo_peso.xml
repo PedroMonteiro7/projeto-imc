@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrarNovoPeso">
+    tools:context=".ui.LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linear_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_red"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/text_view_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:fontFamily="@font/aclonica"
+            android:gravity="start"
+            android:text="HEALTH\nCALC"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:src="@drawable/bmi"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_wave_up"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_wave_top"
+        android:layout_below="@id/linear_top"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/img_wave_up"
+        android:layout_above="@id/img_wave_down"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quanto pesou?"
+            android:layout_marginLeft="25dp"
+            android:gravity="left"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/text_view_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registre o seu novo peso"
+            android:layout_marginLeft="25dp"
+            android:gravity="left"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data da pesagem:"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/tv_dataPesagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="22/11/2021"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/main_red"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginTop="5dp"/>
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+        <!--            android:id="@+id/input_layout_data"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="32dp"-->
+        <!--            android:layout_below="@+id/text_view_login"-->
+        <!--            android:hint="Data">-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/edit_login_data"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:drawableStart="@drawable/ic_baseline_date"-->
+        <!--                android:drawablePadding="15dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:maxLines="1"-->
+        <!--                android:padding="15dp"/>-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/input_novo_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/input_layout_email"
+            android:hint="Peso">
+
+            <EditText
+                android:id="@+id/edit_novo_peso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_people"
+                android:drawablePadding="15dp"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:inputType="numberPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_layout_peso"
+            android:background="@drawable/activity_entrar"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="REGISTRAR"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img_wave_down"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_wave_botton"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desenvolvido por DS2M"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginBottom="5dp"/>
+
+</RelativeLayout>
