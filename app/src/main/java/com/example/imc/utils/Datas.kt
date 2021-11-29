@@ -39,3 +39,21 @@ fun calcularIdade(dataNascimento: String): Int {
     return idade
 
 }
+
+fun getDataAtualBrasil(): String {
+
+//    val hoje = LocalDate.now()
+//    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+//    val dataBrasil = hoje.format(formatter)
+
+    val dataHoje = LocalDate.now().toString()
+    val dataHojeArray = dataHoje.split("-").toTypedArray()
+    val dataBrasil = dataHojeArray[2] + "/" + dataHojeArray[1]  + "/" + dataHojeArray[0]
+
+    return dataBrasil
+
+}
+
+//fun converterLocalDateEmDataBrasil(EuaDate: String): LocalDate {
+//
+//}

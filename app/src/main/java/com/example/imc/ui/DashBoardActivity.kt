@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.imc.PesoActivity
 import com.example.imc.R
 import com.example.imc.RegistrarNovoPeso
 import com.example.imc.utils.calcularIdade
@@ -22,6 +23,7 @@ class DashBoardActivity : AppCompatActivity() {
     lateinit var tvIdade: TextView
     lateinit var tvAltura: TextView
     lateinit var ivPerfil: ImageView
+    lateinit var cardNovaPesagem: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,12 @@ class DashBoardActivity : AppCompatActivity() {
         tvIdade = findViewById(R.id.tv_dash_idade)
         tvImc = findViewById(R.id.tv_dash_imc)
         ivPerfil = findViewById(R.id.iv_dash_foto_perfil)
+        cardNovaPesagem = findViewById(R.id.cardViewPesar)
+
+        cardNovaPesagem.setOnClickListener {
+            val intent = Intent(this, PesoActivity::class.java)
+            startActivity(intent)
+        }
 
         carregarDashboard()
     }
